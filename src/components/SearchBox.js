@@ -8,9 +8,6 @@ const SearchBox = () => {
   return (
     <div className="searchbox">
       <div className="input-group">
-          <div className="input-group-prepend">
-            
-          </div>
           <input
           className="form-control mr-sm-2"
           type="search"
