@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/SearchBox.css";
+import DataAreaContext from "../utils/DataAreaContext";
 
-function SearchBox({ handleSearchChange }) {
+const SearchBox = () => {
+  const context = useContext(DataAreaContext);
+
   return (
     <div className="searchbox">
-      <form className="form-inline">
-        <input
-          className="form-control"
+      <div className="input-group">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="">
+              Search
+            </span>
+          </div>
+          <input
+          className="form-control mr-sm-2"
           type="search"
-          placeholder="Search"
+          placeholder="name"
           aria-label="Search"
-          onChange={e => handleSearchChange(e)}
+          onChange={e => context.handleSearchChange(e)}
         />
-      </form>
+        </div>
     </div>
   );
 }
